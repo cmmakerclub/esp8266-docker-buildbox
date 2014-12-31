@@ -26,8 +26,27 @@ RUN mv /opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf /opt/Espressif/
 #clear builds
 RUN rm -rvf /opt/Espressif/crosstool-NG
 
-ADD symlink.sh /opt/Espressif/xtensa-lx106-elf/bin/
-RUN sh /opt/Espressif/xtensa-lx106-elf/bin/symlink.sh
+#Symlink
+#ADD symlink.sh /opt/Espressif/xtensa-lx106-elf/bin/
+#RUN sh /opt/Espressif/xtensa-lx106-elf/bin/symlink.sh
+
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-addr2line xt-addr2line 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-ar xt-ar 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-as xt-as 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-c++filt xt-c++filt 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-gprof xt-gprof 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-ld xt-ld 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-nm xt-nm 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-objcopy xt-objcopy 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-objdump xt-objdump 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-ranlib xt-ranlib 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-readelf xt-readelf 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-size xt-size 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-strings xt-strings 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-strip xt-strip 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-cpp xt-xc++ 
+RUN cd /opt/Espressif/xtensa-lx106-elf/bin && ln -sv xtensa-lx106-elf-gcc xt-xcc
+
 
 #ESP8266 SDK
 
